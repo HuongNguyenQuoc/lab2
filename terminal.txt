@@ -1,2 +1,13 @@
+5. Chạy chương trình
 arm-linux-gnueabihf-as -o problem1.o problem1.s && arm-linux-gnueabihf-ld -o problem1 problem1.o && ./problem1; echo $?
+⚠️ echo $? chỉ hiện đúng các giá trị từ 0 đến 255. Nếu tổng âm hoặc lớn hơn 255 thì dùng GDB ở mục 6 để xem R0.
+
+6. Debug từng lệnh bằng GDB (khi cần xem thanh ghi)
+
+# Terminal 1
+arm-linux-gnueabihf-as -g -o problem1.o problem1.s && arm-linux-gnueabihf-ld -o problem1 problem1.o
+qemu-arm -g 1234 ./problem1
+
+# Terminal 2
+gdb-multiarch problem1
 
