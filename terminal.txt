@@ -1,0 +1,2 @@
+arm-linux-gnueabihf-as -o problem1.o problem1.s && arm-linux-gnueabihf-ld -o problem1 problem1.o && ./problem1; echo $?
+
